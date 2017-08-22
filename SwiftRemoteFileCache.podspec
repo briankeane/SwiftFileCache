@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "SwiftRemoteFileCache"
-    s.version      = "0.0.1"
+    s.version      = "0.0.2"
     s.summary      = "Manages a cache of remote files for use, based on their relative priority level."
     s.homepage     = "https://github.com/briankeane/SwiftRemoteFileCache.git"
     s.license      = { :type => 'MIT' }
