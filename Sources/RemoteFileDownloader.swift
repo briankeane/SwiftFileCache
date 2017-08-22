@@ -78,7 +78,7 @@ public class RemoteFileDownloader
     ///                             block is passed the AudioCacheObject that completed
     ///
     /// ----------------------------------------------------------------------------
-    public func onCompletion(_ onCompletionBlock:((RemoteFileDownloader)->Void)!) -> RemoteFileDownloader
+    @discardableResult public func onCompletion(_ onCompletionBlock:((RemoteFileDownloader)->Void)!) -> RemoteFileDownloader
     {
         self.onCompletionBlocks.append(onCompletionBlock)
         
@@ -102,7 +102,7 @@ public class RemoteFileDownloader
     ///                          block is passed the AudioCacheObject that progressed
     ///
     /// ----------------------------------------------------------------------------
-    public func onProgress(_ onProgressBlock:((RemoteFileDownloader)->Void)!) -> RemoteFileDownloader
+    @discardableResult public func onProgress(_ onProgressBlock:((RemoteFileDownloader)->Void)!) -> RemoteFileDownloader
     {
         self.onProgressBlocks.append(onProgressBlock)
         return self
@@ -121,7 +121,7 @@ public class RemoteFileDownloader
     ///
     /// ----------------------------------------------------------------------------
     
-    public func onError(_ onErrorBlock:((NSError)->Void)!) -> RemoteFileDownloader
+    @discardableResult public func onError(_ onErrorBlock:((NSError)->Void)!) -> RemoteFileDownloader
     {
         self.onErrorBlocks.append(onErrorBlock)
         return self
