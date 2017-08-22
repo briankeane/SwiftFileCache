@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "SwiftRemoteFileCache"
-    s.version      = "0.0.2"
+    s.version      = "0.0.3"
     s.summary      = "Manages a cache of remote files for use, based on their relative priority level."
     s.homepage     = "https://github.com/briankeane/SwiftRemoteFileCache.git"
     s.license      = { :type => 'MIT' }
@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
     # s.requires_arc = true;
     # s.default_subspec = 'Full'
     s.dependency 'Alamofire', '4.5.0'
+    s.source_files = 'Sources/*.{h,m,swift}'
 
     # probably will use this later when start subSpecing (PlayolaCore-Player, PlayolaCore-Core, etc)
     # s.subspec 'Core' do |core|
