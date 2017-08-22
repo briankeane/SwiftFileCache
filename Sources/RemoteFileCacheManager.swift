@@ -35,12 +35,11 @@ class RemoteFileCacheManager
     /// initializer
     ///
     /// - parameters:
-    ///     - subFolder: `(String)` - the subfolder (within the Documents directory) for storing these files... if
-    ///                               it doesn't exist it will be created.
+    ///     - subFolder: `(String)` - the subfolder (within the Documents directory) for storing these files... if the directory does not exist yet it will be created
+    ///
     /// ----------------------------------------------------------------------------
     init(subFolder:String! = "AudioFiles")
     {
-        // IF there is no AudioFile folder yet, create it
         // create folder if it does not already exist
         let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         let documentsDirectoryURL:URL = URL(fileURLWithPath: paths[0])
@@ -63,10 +62,12 @@ class RemoteFileCacheManager
     /// returns the full url for the location of a file
     ///
     /// - parameters:
-    ///     - filename: `(String)` - the key for the file
+    ///     - remoteURL: `(URL)` - the remote url of the download
     ///
     /// - returns:
-    ///    `NSURL` - the full NSURL for the file's correct location
+    ///    `URL` - the full URL for the file's correct local location.  (Regardless of
+    ///            whether or not the file exists.
+    ///
     /// ----------------------------------------------------------------------------
     func localURLFromRemoteURL(_ remoteURL:URL) -> URL
     {
@@ -77,10 +78,13 @@ class RemoteFileCacheManager
     // -----------------------------------------------------------------------------
     //                          func reportDownloadComplete
     // -----------------------------------------------------------------------------
-    /// removes a cacheObject from the inProgress Dictionary
+    /// performs cleanup operations after a download has finished.  For now that means:
+    ///
+    ///     * removing the RemoteDownloader from the inProgress Dict
     ///
     /// - parameters:
-    ///     - cacheObject: `(AudioCacheObject)` - the AudioCacheObject to remove
+    ///     - remoteURL: `(URL)` - the remoteURL of the completed download
+    ///
     /// ----------------------------------------------------------------------------
     func reportDownloadComplete(_ remoteURL:URL)
     {
@@ -90,7 +94,7 @@ class RemoteFileCacheManager
     // -----------------------------------------------------------------------------
     //                          func pauseDownloads
     // -----------------------------------------------------------------------------
-    /// suspends all downloads
+    /// suspends all downloads.  Current progress data is retained.
     ///
     /// ----------------------------------------------------------------------------
     func pauseDownloads()
@@ -110,6 +114,7 @@ class RemoteFileCacheManager
     ///
     /// - returns:
     ///    `Int` - the folder size in Bytes
+    ///
     /// ----------------------------------------------------------------------------
     func calculateFolderCacheSize() -> Int
     {
@@ -141,7 +146,9 @@ class RemoteFileCacheManager
     // -----------------------------------------------------------------------------
     //                          func pruneCache
     // -----------------------------------------------------------------------------
-    /// deletes all lower priority files
+    /// removes lower priority files until the overall folder size is less than 
+    /// the specified maxFolderSize
+    ///
     /// ----------------------------------------------------------------------------
     func pruneCache()
     {
@@ -158,7 +165,7 @@ class RemoteFileCacheManager
                     }
                     else
                     {
-                        self.deleteAudioFile(fileTuples[i].0)
+                        self.deleteFile(fileTuples[i].0)
                         currentSize = self.calculateFolderCacheSize()
                         if (currentSize < self.maxFolderSize)
                         {
@@ -171,14 +178,15 @@ class RemoteFileCacheManager
     }
     
     // -----------------------------------------------------------------------------
-    //                          func deleteAudioFile
+    //                          func deleteFile
     // -----------------------------------------------------------------------------
-    /// deletes the audioFile with the given filename
+    /// deletes the file with the provided localURL
     ///
     /// - parameters:
-    ///     - filename: `(String)` - the filename of the file to delete
+    ///     - localURL: `(URL)` - the localURL of the file to delete
+    ///
     /// ----------------------------------------------------------------------------
-    func deleteAudioFile(_ localURL:URL)
+    func deleteFile(_ localURL:URL)
     {
         // Create a FileManager instance
         let fileManager = FileManager.default
