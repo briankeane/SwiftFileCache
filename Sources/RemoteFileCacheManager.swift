@@ -8,24 +8,26 @@
 
 import Foundation
 
-import Foundation
-var AUDIO_FILE_CACHE_MAX_SIZE = 52428800  // 50 MB Cache for now
-
 // -----------------------------------------------------------------------------
 //                      class RemoteFileCacheManager
 // -----------------------------------------------------------------------------
-/// handles all downloading of mp3s -- initialized as Singletons
+/// handles file cache downloading and retention.
+///
 /// ----------------------------------------------------------------------------
 class RemoteFileCacheManager
 {
-    /// a dictionary of all AudioCacheObjects currently being downloaded
+    /// a dictionary of all RemoteFileDownloaders currently being downloaded.  The remoteFileURL is used as the key.
     var inProgress:Dictionary<URL, RemoteFileDownloader>! = Dictionary()
     
-    /// the folder to store this service's files in
-    var audioFileDirectoryURL:URL!
+    /// the folder to store the files in.
+    var fileDirectoryURL:URL!
     
-    /// a dictionary that holds all currently active AudioFileCachePriorities for this service
-    var filePriorities:Dictionary<String,RemoteFilePriorityLevel>! = Dictionary()
+    /// a dictionary that holds all currently active RemoteFilePriorityLevels for this service.  remoteFileURL is used as the key
+    var filePriorities:Dictionary<URL,RemoteFilePriorityLevel>! = Dictionary()
+    
+    
+    /// a soft size limit for the folder in bytes.  Once this is reached files with lower priority will be deleted.  Default is 52428800 (50 MB)
+    var maxFolderSize:Int = 52428800
     
     // -----------------------------------------------------------------------------
     //                          func init
@@ -33,7 +35,7 @@ class RemoteFileCacheManager
     /// initializer
     ///
     /// - parameters:
-    ///     - subFolder: `(String)` - the subfolder for storing these files... if
+    ///     - subFolder: `(String)` - the subfolder (within the Documents directory) for storing these files... if
     ///                               it doesn't exist it will be created.
     /// ----------------------------------------------------------------------------
     init(subFolder:String! = "AudioFiles")
@@ -42,12 +44,12 @@ class RemoteFileCacheManager
         // create folder if it does not already exist
         let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         let documentsDirectoryURL:URL = URL(fileURLWithPath: paths[0])
-        audioFileDirectoryURL = documentsDirectoryURL.appendingPathComponent(subFolder)
+        fileDirectoryURL = documentsDirectoryURL.appendingPathComponent(subFolder)
         
         let fileManager = FileManager.default
         do
         {
-            try fileManager.createDirectory(atPath: audioFileDirectoryURL.path, withIntermediateDirectories: false, attributes: nil)
+            try fileManager.createDirectory(atPath: fileDirectoryURL.path, withIntermediateDirectories: false, attributes: nil)
         }
         catch let error as NSError
         {
@@ -69,7 +71,7 @@ class RemoteFileCacheManager
     func localURLFromRemoteURL(_ remoteURL:URL) -> URL
     {
         let filename = remoteURL.lastPathComponent
-        return audioFileDirectoryURL.appendingPathComponent(filename)
+        return fileDirectoryURL.appendingPathComponent(filename)
     }
     
     // -----------------------------------------------------------------------------
@@ -115,13 +117,13 @@ class RemoteFileCacheManager
         var bool: ObjCBool = false
         var folderFileSizeInBytes = 0
         
-        if FileManager().fileExists(atPath: self.audioFileDirectoryURL.path, isDirectory: &bool)
+        if FileManager().fileExists(atPath: self.fileDirectoryURL.path, isDirectory: &bool)
         {
             if bool.boolValue
             {
                 // lets get the folder files
                 let fileManager =  FileManager.default
-                let files = try! fileManager.contentsOfDirectory(at: self.audioFileDirectoryURL, includingPropertiesForKeys: nil, options: [])
+                let files = try! fileManager.contentsOfDirectory(at: self.fileDirectoryURL, includingPropertiesForKeys: nil, options: [])
                 for file in files
                 {
                     folderFileSizeInBytes +=  try! (fileManager.attributesOfItem(atPath: file.path) as NSDictionary).fileSize().hashValue
@@ -144,7 +146,7 @@ class RemoteFileCacheManager
     func pruneCache()
     {
         var currentSize = self.calculateFolderCacheSize()
-        while (currentSize > AUDIO_FILE_CACHE_MAX_SIZE)
+        while (currentSize > self.maxFolderSize)
         {
             if let fileTuples = self.getDeletableFiles()
             {
@@ -158,7 +160,7 @@ class RemoteFileCacheManager
                     {
                         self.deleteAudioFile(fileTuples[i].0)
                         currentSize = self.calculateFolderCacheSize()
-                        if (currentSize < AUDIO_FILE_CACHE_MAX_SIZE)
+                        if (currentSize < self.maxFolderSize)
                         {
                             break
                         }
@@ -176,14 +178,14 @@ class RemoteFileCacheManager
     /// - parameters:
     ///     - filename: `(String)` - the filename of the file to delete
     /// ----------------------------------------------------------------------------
-    func deleteAudioFile(_ filename:String)
+    func deleteAudioFile(_ localURL:URL)
     {
         // Create a FileManager instance
         let fileManager = FileManager.default
         
         do
         {
-            try fileManager.removeItem(atPath: audioFileDirectoryURL.appendingPathComponent(filename).path)
+            try fileManager.removeItem(atPath: localURL.path)
         }
         catch let error as NSError
         {
@@ -205,11 +207,11 @@ class RemoteFileCacheManager
     ///         -- NSTimeInterval -- the time the file was last modified
     ///         -- AudioFileCachePriority -- the priority of the file
     /// ----------------------------------------------------------------------------
-    func getDeletableFiles() -> Array<(String, TimeInterval, RemoteFilePriorityLevel)>?
+    func getDeletableFiles() -> Array<(URL, TimeInterval, RemoteFilePriorityLevel)>?
     {
         
         // comparison
-        func deletability(_ tuple1:(String, TimeInterval, RemoteFilePriorityLevel), tuple2:(String, TimeInterval, RemoteFilePriorityLevel)) -> Bool
+        func deletability(_ tuple1:(URL, TimeInterval, RemoteFilePriorityLevel), tuple2:(URL, TimeInterval, RemoteFilePriorityLevel)) -> Bool
         {
             if (tuple1.2 == tuple2.2)
             {
@@ -221,15 +223,15 @@ class RemoteFileCacheManager
             }
         }
         
-        if let urlArray = try? FileManager.default.contentsOfDirectory(at: audioFileDirectoryURL,
+        if let urlArray = try? FileManager.default.contentsOfDirectory(at: fileDirectoryURL,
                                                                        includingPropertiesForKeys: [URLResourceKey.localizedNameKey, URLResourceKey.contentModificationDateKey], options:.skipsHiddenFiles)
         {
             var tupleMap = urlArray.map
             {
-                url -> (String, TimeInterval, RemoteFilePriorityLevel) in
+                url -> (URL, TimeInterval, RemoteFilePriorityLevel) in
                 var lastModified : AnyObject?
                 _ = try? (url as NSURL).getResourceValue(&lastModified, forKey: URLResourceKey.contentModificationDateKey)
-                return (url.lastPathComponent, lastModified?.timeIntervalSinceReferenceDate ?? 0, self.filePriorities[url.lastPathComponent] ?? RemoteFilePriorityLevel.unspecified)
+                return (url, lastModified?.timeIntervalSinceReferenceDate ?? 0, self.filePriorities[url] ?? RemoteFilePriorityLevel.unspecified)
             }
             
             tupleMap = tupleMap.sorted(by: deletability) // sort descending modification dates
