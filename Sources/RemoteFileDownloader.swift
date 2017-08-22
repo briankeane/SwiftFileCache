@@ -18,11 +18,11 @@ let kAudioFileFinishedLoading:String = "audioFileFinishedLoading"
 class RemoteFileDownloader
 {
     var request:Alamofire.Request?
-    var downloadProgress:Double = 0.0
-    var remoteURL:URL
-    var localURL:URL
-    var suspended:Bool! = false
-    var updatedAt:Date!
+    public var downloadProgress:Double = 0.0
+    public var remoteURL:URL
+    public var localURL:URL
+    public var suspended:Bool! = false
+    public var updatedAt:Date!
     
     fileprivate var onCompletionBlocks:Array<((RemoteFileDownloader)->Void)> = Array()
     fileprivate var onProgressBlocks:Array<((RemoteFileDownloader)->Void)> = Array()
@@ -30,7 +30,7 @@ class RemoteFileDownloader
     
     //------------------------------------------------------------------------------
     
-    init(remoteURL:URL, localURL:URL)
+    public init(remoteURL:URL, localURL:URL)
     {
         self.remoteURL = remoteURL
         self.localURL = localURL
@@ -40,6 +40,7 @@ class RemoteFileDownloader
     }
     
     //------------------------------------------------------------------------------
+    
     func checkForFileExistence()
     {
         if (self.completeFileExists())
@@ -49,7 +50,7 @@ class RemoteFileDownloader
     }
     
     // -----------------------------------------------------------------------------
-    //                          func isCached
+    //                          func completeFileExists
     // -----------------------------------------------------------------------------
     /// returns true if the referenced file already exists
     ///
@@ -77,7 +78,7 @@ class RemoteFileDownloader
     ///                             block is passed the AudioCacheObject that completed
     ///
     /// ----------------------------------------------------------------------------
-    func onCompletion(_ onCompletionBlock:((RemoteFileDownloader)->Void)!) -> RemoteFileDownloader
+    public func onCompletion(_ onCompletionBlock:((RemoteFileDownloader)->Void)!) -> RemoteFileDownloader
     {
         self.onCompletionBlocks.append(onCompletionBlock)
         
@@ -101,7 +102,7 @@ class RemoteFileDownloader
     ///                          block is passed the AudioCacheObject that progressed
     ///
     /// ----------------------------------------------------------------------------
-    func onProgress(_ onProgressBlock:((RemoteFileDownloader)->Void)!) -> RemoteFileDownloader
+    public func onProgress(_ onProgressBlock:((RemoteFileDownloader)->Void)!) -> RemoteFileDownloader
     {
         self.onProgressBlocks.append(onProgressBlock)
         return self
@@ -120,7 +121,7 @@ class RemoteFileDownloader
     ///
     /// ----------------------------------------------------------------------------
     
-    func onError(_ onErrorBlock:((NSError)->Void)!) -> RemoteFileDownloader
+    public func onError(_ onErrorBlock:((NSError)->Void)!) -> RemoteFileDownloader
     {
         self.onErrorBlocks.append(onErrorBlock)
         return self
@@ -158,7 +159,7 @@ class RemoteFileDownloader
     
     //------------------------------------------------------------------------------
     
-    func beginDownload()
+    public func beginDownload()
     {
         let destination:DownloadRequest.DownloadFileDestination = { _, _ in return (self.localURL, []) }
         
@@ -190,7 +191,7 @@ class RemoteFileDownloader
     
     //------------------------------------------------------------------------------
     
-    func pauseDownload()
+    public func pauseDownload()
     {
         if let _ = self.request
         {
@@ -204,7 +205,7 @@ class RemoteFileDownloader
     
     //------------------------------------------------------------------------------
     
-    func resumeDownload()
+    public func resumeDownload()
     {
         // IF there's already a request
         if let _ = self.request
@@ -220,7 +221,7 @@ class RemoteFileDownloader
     
     //------------------------------------------------------------------------------
     
-    func cancelDownload()
+    public func cancelDownload()
     {
         self.request?.cancel()
     }

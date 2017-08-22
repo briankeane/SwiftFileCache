@@ -14,20 +14,20 @@ import Foundation
 /// handles file cache downloading and retention.
 ///
 /// ----------------------------------------------------------------------------
-class RemoteFileCacheManager
+public class RemoteFileCacheManager
 {
     /// a dictionary of all RemoteFileDownloaders currently being downloaded.  The remoteFileURL is used as the key.
     var inProgress:Dictionary<URL, RemoteFileDownloader>! = Dictionary()
     
     /// the folder to store the files in.
-    var fileDirectoryURL:URL!
+    public var fileDirectoryURL:URL!
     
     /// a dictionary that holds all currently active RemoteFilePriorityLevels for this service.  remoteFileURL is used as the key
-    var filePriorities:Dictionary<URL,RemoteFilePriorityLevel>! = Dictionary()
+    public var filePriorities:Dictionary<URL,RemoteFilePriorityLevel>! = Dictionary()
     
     
     /// a soft size limit for the folder in bytes.  Once this is reached files with lower priority will be deleted.  Default is 52428800 (50 MB)
-    var maxFolderSize:Int = 52428800
+    public var maxFolderSize:Int = 52428800
     
     // -----------------------------------------------------------------------------
     //                          func init
@@ -38,7 +38,7 @@ class RemoteFileCacheManager
     ///     - subFolder: `(String)` - the subfolder (within the Documents directory) for storing these files... if the directory does not exist yet it will be created
     ///
     /// ----------------------------------------------------------------------------
-    init(subFolder:String! = "AudioFiles")
+    public init(subFolder:String! = "AudioFiles")
     {
         // create folder if it does not already exist
         let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
@@ -97,7 +97,7 @@ class RemoteFileCacheManager
     /// suspends all downloads.  Current progress data is retained.
     ///
     /// ----------------------------------------------------------------------------
-    func pauseDownloads()
+    public func pauseDownloads()
     {
         for (_, cachedObject) in self.inProgress
         {
@@ -150,7 +150,7 @@ class RemoteFileCacheManager
     /// the specified maxFolderSize
     ///
     /// ----------------------------------------------------------------------------
-    func pruneCache()
+    publc func pruneCache()
     {
         var currentSize = self.calculateFolderCacheSize()
         while (currentSize > self.maxFolderSize)
@@ -186,7 +186,7 @@ class RemoteFileCacheManager
     ///     - localURL: `(URL)` - the localURL of the file to delete
     ///
     /// ----------------------------------------------------------------------------
-    func deleteFile(_ localURL:URL)
+    public func deleteFile(_ localURL:URL)
     {
         // Create a FileManager instance
         let fileManager = FileManager.default
@@ -266,7 +266,7 @@ class RemoteFileCacheManager
     /// - returns:
     ///    `RemoteFileDownloader` - the RemoteFileDownloader managing the active download.
     /// ----------------------------------------------------------------------------
-    func downloadFile(_ remoteURL:URL) -> RemoteFileDownloader
+    public func downloadFile(_ remoteURL:URL) -> RemoteFileDownloader
     {
         // if a downloader is already in progress for that file
         if let downloader = self.inProgress[remoteURL]
