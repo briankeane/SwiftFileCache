@@ -69,7 +69,7 @@ public class RemoteFileCacheManager
     ///            whether or not the file exists.
     ///
     /// ----------------------------------------------------------------------------
-    func localURLFromRemoteURL(_ remoteURL:URL) -> URL
+    public func localURLFromRemoteURL(_ remoteURL:URL) -> URL
     {
         let filename = remoteURL.lastPathComponent
         return fileDirectoryURL.appendingPathComponent(filename)
@@ -150,7 +150,7 @@ public class RemoteFileCacheManager
     /// the specified maxFolderSize
     ///
     /// ----------------------------------------------------------------------------
-    publc func pruneCache()
+    public func pruneCache()
     {
         var currentSize = self.calculateFolderCacheSize()
         while (currentSize > self.maxFolderSize)
@@ -265,6 +265,7 @@ public class RemoteFileCacheManager
     ///
     /// - returns:
     ///    `RemoteFileDownloader` - the RemoteFileDownloader managing the active download.
+    ///
     /// ----------------------------------------------------------------------------
     public func downloadFile(_ remoteURL:URL) -> RemoteFileDownloader
     {
@@ -287,5 +288,22 @@ public class RemoteFileCacheManager
         downloader.beginDownload()
         self.inProgress[remoteURL] = downloader
         return downloader
+    }
+    
+    // -----------------------------------------------------------------------------
+    //                          func completeFileExists
+    // -----------------------------------------------------------------------------
+    /// checks for file existence based on remoteURL.
+    ///
+    /// - parameters:
+    ///     - remoteURL: `(URL)` - the remote url of the file
+    ///
+    /// - returns:
+    ///    `Bool` - true if the complete file exists
+    /// ----------------------------------------------------------------------------
+    public func completeFileExists(remoteFileURL:URL) -> Bool
+    {
+        let localURL = self.localURLFromRemoteURL(remoteFileURL)
+        return FileManager.default.fileExists(atPath: localURL.path)
     }
 }

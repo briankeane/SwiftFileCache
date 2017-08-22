@@ -15,7 +15,7 @@ import Alamofire
 // notification constants
 let kAudioFileFinishedLoading:String = "audioFileFinishedLoading"
 
-class RemoteFileDownloader
+public class RemoteFileDownloader
 {
     var request:Alamofire.Request?
     public var downloadProgress:Double = 0.0
@@ -60,7 +60,7 @@ class RemoteFileDownloader
     /// - returns:
     ///    `Bool` - returns true if the file exists
     /// ----------------------------------------------------------------------------
-    func completeFileExists() -> Bool
+    public func completeFileExists() -> Bool
     {
         return FileManager.default.fileExists(atPath: self.localURL.path)
     }
