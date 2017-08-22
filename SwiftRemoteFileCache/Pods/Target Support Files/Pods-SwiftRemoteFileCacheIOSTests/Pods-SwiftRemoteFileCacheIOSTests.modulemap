@@ -1,0 +1,6 @@
+framework module Pods_SwiftRemoteFileCacheIOSTests {
+  umbrella header "Pods-SwiftRemoteFileCacheIOSTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

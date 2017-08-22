@@ -1,0 +1,38 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+def pods
+    pod 'Alamofire', '4.5.0'
+end
+
+def testOnly
+    pod 'Quick'
+    pod 'Nimble'
+end
+
+target 'SwiftRemoteFileCacheIOS' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+  pods()
+
+  target 'SwiftRemoteFileCacheIOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+    testOnly()
+  end
+
+end
+
+target 'SwiftRemoteFileCacheOSX' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+  pods()
+  # Pods for SwiftRemoteFileCacheOSX
+
+  target 'SwiftRemoteFileCacheOSXTests' do
+    inherit! :search_paths
+    # Pods for testing
+    testOnly()
+  end
+
+end
