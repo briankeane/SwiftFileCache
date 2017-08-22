@@ -222,6 +222,6 @@ class RemoteFileDownloader
     
     func cancelDownload()
     {
-        self.request!.cancel()
+        self.request?.cancel()
     }
 }
