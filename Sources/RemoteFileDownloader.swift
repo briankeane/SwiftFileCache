@@ -41,7 +41,7 @@ public class RemoteFileDownloader
     
     //------------------------------------------------------------------------------
     
-    func checkForFileExistence() -> Bool
+    @discardableResult func checkForFileExistence() -> Bool
     {
         if (self.completeFileExists())
         {
