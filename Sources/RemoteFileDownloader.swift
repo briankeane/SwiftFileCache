@@ -41,12 +41,14 @@ public class RemoteFileDownloader
     
     //------------------------------------------------------------------------------
     
-    func checkForFileExistence()
+    func checkForFileExistence() -> Bool
     {
         if (self.completeFileExists())
         {
             self.downloadProgress = 1.0
+            return true
         }
+        return false
     }
     
     // -----------------------------------------------------------------------------
@@ -161,7 +163,7 @@ public class RemoteFileDownloader
     
     public func beginDownload()
     {
-        if (self.completeFileExists())
+        if (self.checkForFileExistence())
         {
             self.executeOnCompletionBlocks()
         }
