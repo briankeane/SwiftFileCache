@@ -161,30 +161,37 @@ public class RemoteFileDownloader
     
     public func beginDownload()
     {
-        let destination:DownloadRequest.DownloadFileDestination = { _, _ in return (self.localURL, []) }
-        
-        self.request = Alamofire.download(self.remoteURL, method: .get, to: destination)
-            .downloadProgress
-            {
-                (progress) -> Void in
-                self.downloadProgress = progress.fractionCompleted
-                self.updatedAt = Date()
-                self.executeOnProgressBlocks()
-            }
-            .response
-            {
-                (response) -> Void in
-                if let error = response.error
+        if (self.completeFileExists())
+        {
+            self.executeOnCompletionBlocks()
+        }
+        else
+        {
+            let destination:DownloadRequest.DownloadFileDestination = { _, _ in return (self.localURL, []) }
+            
+            self.request = Alamofire.download(self.remoteURL, method: .get, to: destination)
+                .downloadProgress
                 {
-                    print("download error")
-                    print(error)
-                    self.request?.cancel()
-                    self.request = nil
-                    self.executeOnErrorBlocks(error as NSError)
+                    (progress) -> Void in
+                    self.downloadProgress = progress.fractionCompleted
+                    self.updatedAt = Date()
+                    self.executeOnProgressBlocks()
                 }
-                else
+                .response
                 {
-                    self.executeOnCompletionBlocks()
+                    (response) -> Void in
+                    if let error = response.error
+                    {
+                        print("download error")
+                        print(error)
+                        self.request?.cancel()
+                        self.request = nil
+                        self.executeOnErrorBlocks(error as NSError)
+                    }
+                    else
+                    {
+                        self.executeOnCompletionBlocks()
+                    }
                 }
         }
     }
