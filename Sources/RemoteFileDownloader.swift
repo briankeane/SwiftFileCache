@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  RemoteFileDownloader.swift
 //  SwiftRemoteFileCache
 //
 //  Created by Brian D Keane on 8/20/17.
