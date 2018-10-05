@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
     # s.osx.frameworks = 'AudioToolbox','AudioUnit','CoreAudio','QuartzCore','OpenGL','GLKit', 'Accelerate'
     # s.requires_arc = true;
     # s.default_subspec = 'Full'
-    s.dependency 'Alamofire', '4.7.3`'
+    s.dependency 'Alamofire', '4.7.3'
     s.source_files = 'Sources/*.{h,m,swift}'
 
     # probably will use this later when start subSpecing (PlayolaCore-Player, PlayolaCore-Core, etc)
