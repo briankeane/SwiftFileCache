@@ -264,7 +264,6 @@
 				4B90897B1F4A684C0039490F /* Frameworks */,
 				4B90897C1F4A684C0039490F /* Headers */,
 				4B90897D1F4A684C0039490F /* Resources */,
-				2C72A2638CE8EDE6979846A3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -284,7 +283,6 @@
 				4B9089841F4A684C0039490F /* Frameworks */,
 				4B9089851F4A684C0039490F /* Resources */,
 				581D115BC0E4F6D6D5100255 /* [CP] Embed Pods Frameworks */,
-				591C07B643D3E6FC8E439B5E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -305,7 +303,6 @@
 				4B9089971F4A685E0039490F /* Frameworks */,
 				4B9089981F4A685E0039490F /* Headers */,
 				4B9089991F4A685E0039490F /* Resources */,
-				71EF3F91DF2A60E65663D7CD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -325,7 +322,6 @@
 				4B9089A01F4A685E0039490F /* Frameworks */,
 				4B9089A11F4A685E0039490F /* Resources */,
 				A79BCED7DB04449E157F1E82 /* [CP] Embed Pods Frameworks */,
-				EE7D91CCA06E6654BDBACEC9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -423,21 +419,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2C72A2638CE8EDE6979846A3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRemoteFileCacheIOS/Pods-SwiftRemoteFileCacheIOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4A93352590E3EAC9025005A6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -496,36 +477,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRemoteFileCacheIOSTests/Pods-SwiftRemoteFileCacheIOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		591C07B643D3E6FC8E439B5E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRemoteFileCacheIOSTests/Pods-SwiftRemoteFileCacheIOSTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		71EF3F91DF2A60E65663D7CD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRemoteFileCacheOSX/Pods-SwiftRemoteFileCacheOSX-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		92BD991327C812982DE61603 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,21 +533,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EE7D91CCA06E6654BDBACEC9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRemoteFileCacheOSXTests/Pods-SwiftRemoteFileCacheOSXTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

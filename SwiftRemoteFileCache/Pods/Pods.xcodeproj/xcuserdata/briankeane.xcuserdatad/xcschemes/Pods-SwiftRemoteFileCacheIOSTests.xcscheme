@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9ADA1228B202725B8F6C2914432701DD"
+               BlueprintIdentifier = "3EE0DAC17BEB2ACED7D3DECAD3B074DD"
                BuildableName = "Pods_SwiftRemoteFileCacheIOSTests.framework"
                BlueprintName = "Pods-SwiftRemoteFileCacheIOSTests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9ADA1228B202725B8F6C2914432701DD"
+            BlueprintIdentifier = "3EE0DAC17BEB2ACED7D3DECAD3B074DD"
             BuildableName = "Pods_SwiftRemoteFileCacheIOSTests.framework"
             BlueprintName = "Pods-SwiftRemoteFileCacheIOSTests"
             ReferencedContainer = "container:Pods.xcodeproj">

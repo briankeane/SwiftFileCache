@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AA642CE00BE9AD1E8D7B2CD1F1CC59C1"
+               BlueprintIdentifier = "0FFFB7DE380163BB848C002D4BDDCCE5"
                BuildableName = "Quick.framework"
                BlueprintName = "Quick-macOS"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AA642CE00BE9AD1E8D7B2CD1F1CC59C1"
+            BlueprintIdentifier = "0FFFB7DE380163BB848C002D4BDDCCE5"
             BuildableName = "Quick.framework"
             BlueprintName = "Quick-macOS"
             ReferencedContainer = "container:Pods.xcodeproj">

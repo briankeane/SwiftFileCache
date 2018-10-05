@@ -1,10 +1,11 @@
 Pod::Spec.new do |s|
     s.name         = "SwiftRemoteFileCache"
-    s.version      = "0.0.8"
+    s.version      = "0.1"
     s.summary      = "Manages a cache of remote files for use, based on their relative priority level."
     s.homepage     = "https://github.com/briankeane/SwiftRemoteFileCache.git"
     s.license      = { :type => 'MIT' }
     s.author       = { "Brian Keane" => "brian@playola.fm" }
+    s.pod_target_xcconfig = { "SWIFT_VERSION" => "4.2" }
     s.ios.deployment_target = '10.3'
     s.osx.deployment_target = '10.11'
     s.source       = { :git => "https://github.com/briankeane/SwiftRemoteFileCache.git", :tag => s.version }
@@ -13,7 +14,7 @@ Pod::Spec.new do |s|
     # s.osx.frameworks = 'AudioToolbox','AudioUnit','CoreAudio','QuartzCore','OpenGL','GLKit', 'Accelerate'
     # s.requires_arc = true;
     # s.default_subspec = 'Full'
-    s.dependency 'Alamofire', '4.5.0'
+    s.dependency 'Alamofire', '4.7.3`'
     s.source_files = 'Sources/*.{h,m,swift}'
 
     # probably will use this later when start subSpecing (PlayolaCore-Player, PlayolaCore-Core, etc)
