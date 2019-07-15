@@ -14,16 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Nimble-iOS.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Nimble-macOS.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-SwiftRemoteFileCacheIOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -40,16 +30,6 @@
 			<false/>
 		</dict>
 		<key>Pods-SwiftRemoteFileCacheOSXTests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Quick-iOS.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Quick-macOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

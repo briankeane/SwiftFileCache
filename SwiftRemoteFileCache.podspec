@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
     s.name         = "SwiftRemoteFileCache"
-    s.version      = "0.1"
+    s.version      = "0.2"
     s.summary      = "Manages a cache of remote files for use, based on their relative priority level."
     s.homepage     = "https://github.com/briankeane/SwiftRemoteFileCache.git"
     s.license      = { :type => 'MIT' }
     s.author       = { "Brian Keane" => "brian@playola.fm" }
-    # s.pod_target_xcconfig = { "SWIFT_VERSION" => "4.2" }
+    s.swift_version = '5.0'
     s.ios.deployment_target = '10.3'
     s.osx.deployment_target = '10.11'
     s.source       = { :git => "https://github.com/briankeane/SwiftRemoteFileCache.git", :tag => s.version }
