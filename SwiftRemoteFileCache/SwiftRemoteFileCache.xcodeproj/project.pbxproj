@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		4A3F625874AC7177E8B50859 /* Pods_SwiftRemoteFileCacheIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA15BC6FAB098EC6D1732896 /* Pods_SwiftRemoteFileCacheIOSTests.framework */; };
 		4B9089881F4A684C0039490F /* SwiftRemoteFileCacheIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B90897F1F4A684C0039490F /* SwiftRemoteFileCacheIOS.framework */; };
-		4B90898D1F4A684C0039490F /* SwiftRemoteFileCacheIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B90898C1F4A684C0039490F /* SwiftRemoteFileCacheIOSTests.swift */; };
 		4B90898F1F4A684C0039490F /* SwiftRemoteFileCacheIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B9089811F4A684C0039490F /* SwiftRemoteFileCacheIOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B9089A41F4A685E0039490F /* SwiftRemoteFileCacheOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B90899B1F4A685E0039490F /* SwiftRemoteFileCacheOSX.framework */; };
-		4B9089A91F4A685E0039490F /* SwiftRemoteFileCacheOSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9089A81F4A685E0039490F /* SwiftRemoteFileCacheOSXTests.swift */; };
 		4B9089AB1F4A685E0039490F /* SwiftRemoteFileCacheOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B90899D1F4A685E0039490F /* SwiftRemoteFileCacheOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B9089B31F4A68EE0039490F /* RemoteFileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9089B21F4A68EE0039490F /* RemoteFileDownloader.swift */; };
 		4B9089B41F4A68EE0039490F /* RemoteFileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9089B21F4A68EE0039490F /* RemoteFileDownloader.swift */; };
@@ -28,8 +26,6 @@
 		4B9089C21F4B02FF0039490F /* RemoteFilePriorityLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9089BE1F4B02FF0039490F /* RemoteFilePriorityLevel.swift */; };
 		4B9089C91F4B9B8C0039490F /* RemoteFileCacheManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9089C81F4B9B8C0039490F /* RemoteFileCacheManagerTests.swift */; };
 		4B9089CA1F4B9B8C0039490F /* RemoteFileCacheManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9089C81F4B9B8C0039490F /* RemoteFileCacheManagerTests.swift */; };
-		4B9089CC1F4B9C3D0039490F /* RemoteFileDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9089CB1F4B9C3D0039490F /* RemoteFileDownloaderTests.swift */; };
-		4B9089CD1F4B9C3D0039490F /* RemoteFileDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9089CB1F4B9C3D0039490F /* RemoteFileDownloaderTests.swift */; };
 		4B9089CF1F4B9FD30039490F /* AlamofireMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9089CE1F4B9FD30039490F /* AlamofireMock.swift */; };
 		4B9089D01F4B9FD30039490F /* AlamofireMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9089CE1F4B9FD30039490F /* AlamofireMock.swift */; };
 		776A898ECB1A2C8EB83A8BD4 /* Pods_SwiftRemoteFileCacheIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC41FBD7E44722BEF7E5AF4 /* Pods_SwiftRemoteFileCacheIOS.framework */; };
@@ -62,19 +58,16 @@
 		4B9089811F4A684C0039490F /* SwiftRemoteFileCacheIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRemoteFileCacheIOS.h; sourceTree = "<group>"; };
 		4B9089821F4A684C0039490F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B9089871F4A684C0039490F /* SwiftRemoteFileCacheIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRemoteFileCacheIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B90898C1F4A684C0039490F /* SwiftRemoteFileCacheIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRemoteFileCacheIOSTests.swift; sourceTree = "<group>"; };
 		4B90898E1F4A684C0039490F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B90899B1F4A685E0039490F /* SwiftRemoteFileCacheOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRemoteFileCacheOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B90899D1F4A685E0039490F /* SwiftRemoteFileCacheOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRemoteFileCacheOSX.h; sourceTree = "<group>"; };
 		4B90899E1F4A685E0039490F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B9089A31F4A685E0039490F /* SwiftRemoteFileCacheOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRemoteFileCacheOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B9089A81F4A685E0039490F /* SwiftRemoteFileCacheOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRemoteFileCacheOSXTests.swift; sourceTree = "<group>"; };
 		4B9089AA1F4A685E0039490F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B9089B21F4A68EE0039490F /* RemoteFileDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteFileDownloader.swift; path = ../Sources/RemoteFileDownloader.swift; sourceTree = "<group>"; };
 		4B9089B91F4B02360039490F /* RemoteFileCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteFileCacheManager.swift; path = ../Sources/RemoteFileCacheManager.swift; sourceTree = "<group>"; };
 		4B9089BE1F4B02FF0039490F /* RemoteFilePriorityLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteFilePriorityLevel.swift; path = ../Sources/RemoteFilePriorityLevel.swift; sourceTree = "<group>"; };
 		4B9089C81F4B9B8C0039490F /* RemoteFileCacheManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteFileCacheManagerTests.swift; path = ../Tests/RemoteFileCacheManagerTests.swift; sourceTree = "<group>"; };
-		4B9089CB1F4B9C3D0039490F /* RemoteFileDownloaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoteFileDownloaderTests.swift; path = ../Tests/RemoteFileDownloaderTests.swift; sourceTree = "<group>"; };
 		4B9089CE1F4B9FD30039490F /* AlamofireMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamofireMock.swift; path = ../Tests/AlamofireMock.swift; sourceTree = "<group>"; };
 		53B698039EC566093A01213F /* Pods-SwiftRemoteFileCacheIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRemoteFileCacheIOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftRemoteFileCacheIOSTests/Pods-SwiftRemoteFileCacheIOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		579D3EF10AC511FA2957575A /* Pods-SwiftRemoteFileCacheOSXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftRemoteFileCacheOSXTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftRemoteFileCacheOSXTests/Pods-SwiftRemoteFileCacheOSXTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,7 +171,6 @@
 		4B90898B1F4A684C0039490F /* SwiftRemoteFileCacheIOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				4B90898C1F4A684C0039490F /* SwiftRemoteFileCacheIOSTests.swift */,
 				4B90898E1F4A684C0039490F /* Info.plist */,
 			);
 			path = SwiftRemoteFileCacheIOSTests;
@@ -196,7 +188,6 @@
 		4B9089A71F4A685E0039490F /* SwiftRemoteFileCacheOSXTests */ = {
 			isa = PBXGroup;
 			children = (
-				4B9089A81F4A685E0039490F /* SwiftRemoteFileCacheOSXTests.swift */,
 				4B9089AA1F4A685E0039490F /* Info.plist */,
 			);
 			path = SwiftRemoteFileCacheOSXTests;
@@ -216,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				4B9089C81F4B9B8C0039490F /* RemoteFileCacheManagerTests.swift */,
-				4B9089CB1F4B9C3D0039490F /* RemoteFileDownloaderTests.swift */,
 				4B9089CE1F4B9FD30039490F /* AlamofireMock.swift */,
 			);
 			name = Tests;
@@ -264,7 +254,6 @@
 				4B90897B1F4A684C0039490F /* Frameworks */,
 				4B90897C1F4A684C0039490F /* Headers */,
 				4B90897D1F4A684C0039490F /* Resources */,
-				2C72A2638CE8EDE6979846A3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -283,8 +272,6 @@
 				4B9089831F4A684C0039490F /* Sources */,
 				4B9089841F4A684C0039490F /* Frameworks */,
 				4B9089851F4A684C0039490F /* Resources */,
-				581D115BC0E4F6D6D5100255 /* [CP] Embed Pods Frameworks */,
-				591C07B643D3E6FC8E439B5E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -305,7 +292,6 @@
 				4B9089971F4A685E0039490F /* Frameworks */,
 				4B9089981F4A685E0039490F /* Headers */,
 				4B9089991F4A685E0039490F /* Resources */,
-				71EF3F91DF2A60E65663D7CD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,8 +310,6 @@
 				4B90899F1F4A685E0039490F /* Sources */,
 				4B9089A01F4A685E0039490F /* Frameworks */,
 				4B9089A11F4A685E0039490F /* Resources */,
-				A79BCED7DB04449E157F1E82 /* [CP] Embed Pods Frameworks */,
-				EE7D91CCA06E6654BDBACEC9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -360,13 +344,13 @@
 					4B90899A1F4A685E0039490F = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = FSRSPV9N9Q;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					4B9089A21F4A685E0039490F = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = FSRSPV9N9Q;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -376,6 +360,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 4B9089561F4A67D40039490F;
@@ -423,21 +408,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2C72A2638CE8EDE6979846A3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRemoteFileCacheIOS/Pods-SwiftRemoteFileCacheIOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4A93352590E3EAC9025005A6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -474,58 +444,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		581D115BC0E4F6D6D5100255 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRemoteFileCacheIOSTests/Pods-SwiftRemoteFileCacheIOSTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble-iOS/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick-iOS/Quick.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRemoteFileCacheIOSTests/Pods-SwiftRemoteFileCacheIOSTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		591C07B643D3E6FC8E439B5E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRemoteFileCacheIOSTests/Pods-SwiftRemoteFileCacheIOSTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		71EF3F91DF2A60E65663D7CD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRemoteFileCacheOSX/Pods-SwiftRemoteFileCacheOSX-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		92BD991327C812982DE61603 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -542,28 +460,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A79BCED7DB04449E157F1E82 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRemoteFileCacheOSXTests/Pods-SwiftRemoteFileCacheOSXTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble-macOS/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick-macOS/Quick.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-macOS/Alamofire.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRemoteFileCacheOSXTests/Pods-SwiftRemoteFileCacheOSXTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D34BEC012BE627D7D2A949C1 /* [CP] Check Pods Manifest.lock */ = {
@@ -584,21 +480,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EE7D91CCA06E6654BDBACEC9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRemoteFileCacheOSXTests/Pods-SwiftRemoteFileCacheOSXTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -616,10 +497,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B9089CC1F4B9C3D0039490F /* RemoteFileDownloaderTests.swift in Sources */,
 				4B9089CF1F4B9FD30039490F /* AlamofireMock.swift in Sources */,
 				4B9089C91F4B9B8C0039490F /* RemoteFileCacheManagerTests.swift in Sources */,
-				4B90898D1F4A684C0039490F /* SwiftRemoteFileCacheIOSTests.swift in Sources */,
 				4B9089BB1F4B02360039490F /* RemoteFileCacheManager.swift in Sources */,
 				4B9089C01F4B02FF0039490F /* RemoteFilePriorityLevel.swift in Sources */,
 				4B9089B41F4A68EE0039490F /* RemoteFileDownloader.swift in Sources */,
@@ -640,10 +519,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B9089CD1F4B9C3D0039490F /* RemoteFileDownloaderTests.swift in Sources */,
 				4B9089D01F4B9FD30039490F /* AlamofireMock.swift in Sources */,
 				4B9089CA1F4B9B8C0039490F /* RemoteFileCacheManagerTests.swift in Sources */,
-				4B9089A91F4A685E0039490F /* SwiftRemoteFileCacheOSXTests.swift in Sources */,
 				4B9089BD1F4B02360039490F /* RemoteFileCacheManager.swift in Sources */,
 				4B9089C21F4B02FF0039490F /* RemoteFilePriorityLevel.swift in Sources */,
 				4B9089B61F4A68EE0039490F /* RemoteFileDownloader.swift in Sources */,
@@ -790,7 +667,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -814,7 +691,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -828,7 +705,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fm.playola.SwiftRemoteFileCacheIOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -842,7 +719,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fm.playola.SwiftRemoteFileCacheIOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -868,8 +745,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -894,8 +770,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -913,8 +788,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fm.playola.SwiftRemoteFileCacheOSXTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -932,8 +806,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fm.playola.SwiftRemoteFileCacheOSXTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

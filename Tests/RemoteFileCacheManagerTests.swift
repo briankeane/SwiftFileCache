@@ -7,13 +7,13 @@
 //
 
 import XCTest
-import Quick
-import Nimble
+//import Quick
+//import Nimble
 
-class RemoteFileCacheManagerTests: QuickSpec
-{
-    override func spec()
-    {
+//class RemoteFileCacheManagerTests: QuickSpec
+//{
+//    override func spec()
+//    {
 //        describe("RemoteFileCacheManagerTests")
 //        {
 //            var paths:[String] = []
@@ -122,5 +122,5 @@ class RemoteFileCacheManagerTests: QuickSpec
 //            }
 //        }
 //
-    }
-}
+//    }
+//}
